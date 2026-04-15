@@ -71,7 +71,7 @@ spec:
           strategy: wrr
           weight: 10
   tls:
-    certResolver: cf-prod
+    certResolver: myresolver
     domains:
       - main: rielu.uniproject.jp
       - main: www.rielu.uniproject.jp
