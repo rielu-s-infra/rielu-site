@@ -27,8 +27,8 @@ spec:
               cpu: 1000m # 最大1CPUまで使用可能
               memory: 2Gi # 最大2GiBまで使用可能
           readinessProbe:
-            initialDelaySeconds: 30
-            periodSeconds: 20
+            initialDelaySeconds: 40
+            periodSeconds: 30
             httpGet:
               path: /
               port: default-port
