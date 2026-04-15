@@ -9,6 +9,6 @@ spec:
     - namePattern: "rielu-site"
       images:
         - alias: "rielu-site"
-          imageName: "registry.rielu.uniproject.jp/official/rielu-site"
+          imageName: "ghcr.io/penti-nameko/rielu-site"
           commonUpdateSettings:
             updateStrategy: "semver"

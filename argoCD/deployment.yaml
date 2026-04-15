@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: registry.rielu.uniproject.jp/official/rielu-site:4.1.8
+          image: ghcr.io/penti-nameko/rielu-site:4.1.8
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
@@ -41,5 +41,3 @@ spec:
           env:
             - name: TZ
               value: Asia/Tokyo
-      imagePullSecrets:
-        - name: internal-harbor

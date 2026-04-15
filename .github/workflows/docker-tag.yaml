@@ -26,13 +26,6 @@ jobs:
       - name: Extract tag name
         run: tagname=${GITHUB_REF#refs/*/} && echo "TAG_NAME=${tagname#v}" >> $GITHUB_ENV
 
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@b45d80f862d83dbcd57f89517bcf500b2ab88fb2 # v4
-        with:
-          registry: registry.uniproject.jp
-          username: robot$github-publisher
-          password: ${{ secrets.HARBOR_TOKEN }}
-
       - name: Add metadata
         id: meta
         uses: docker/metadata-action@030e881283bb7a6894de51c315a6bfe6a94e05cf # v6
