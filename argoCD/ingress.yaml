@@ -2,26 +2,26 @@ apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
   name: redirect-to-www
-  namespace: unipro-site
+  namespace: riellu-site
 spec:
   redirectRegex:
-    # httpでもhttpsでもuniproject.jpに来たら
-    regex: ^https?://uniproject\.jp/(.*)
+    # httpでもhttpsでもrielu.uniproject.jpに来たら
+    regex: ^https?://rielu.uniproject\.jp/(.*)
     # www付きに飛ばす
-    replacement: https://www.uniproject.jp/${1}
+    replacement: https://rielu.uniproject.jp/${1}
     permanent: true
 ---
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
-  name: unipro-site
+  name: rielu-site
 spec:
   entryPoints:
     - websecure
     - web
   routes:
     - kind: Rule
-      match: Host(`www.uniproject.jp`) && PathPrefix(`/`)
+      match: Host(`www.rielu.uniproject.jp`) && PathPrefix(`/`)
       observability:
         accessLogs: true
         metrics: true
@@ -29,10 +29,10 @@ spec:
       priority: 1
       middlewares:
         - name: redirect-to-www
-          namespace: unipro-site
+          namespace: riellu-site
       services:
         - kind: Service
-          name: unipro-site
+          name: rielu-site
           passHostHeader: true
           port: 80
           responseForwarding:
@@ -46,7 +46,7 @@ spec:
           strategy: wrr
           weight: 10
     - kind: Rule
-      match: Host(`uniproject.jp`) && PathPrefix(`/`)
+      match: Host(`rielu.uniproject.jp`) && PathPrefix(`/`)
       observability:
         accessLogs: true
         metrics: true
@@ -54,10 +54,10 @@ spec:
       priority: 1
       middlewares:
         - name: redirect-to-www
-          namespace: unipro-site
+          namespace: riellu-site
       services:
         - kind: Service
-          name: unipro-site
+          name: rielu-site
           passHostHeader: true
           port: 80
           responseForwarding:
@@ -73,5 +73,5 @@ spec:
   tls:
     certResolver: cf-prod
     domains:
-      - main: uniproject.jp
-      - main: www.uniproject.jp
+      - main: rielu.uniproject.jp
+      - main: www.rielu.uniproject.jp

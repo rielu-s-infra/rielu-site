@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: unipro-site
+  name: rielu-site
 spec:
   selector:
-    app: unipro-site
+    app: rielu-site
   ports:
     - port: 80
       targetPort: 3000

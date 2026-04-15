@@ -6,9 +6,9 @@ metadata:
 spec:
   namespace: argocd
   applicationRefs:
-    - namePattern: "unipro-site"
+    - namePattern: "rielu-site"
       images:
-        - alias: "unipro-site"
-          imageName: "registry.uniproject.jp/official/unipro-site"
+        - alias: "rielu-site"
+          imageName: "registry.rielu.uniproject.jp/official/rielu-site"
           commonUpdateSettings:
             updateStrategy: "semver"

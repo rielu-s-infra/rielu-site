@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: unipro-site
+  name: rielu-site
 spec:
   selector:
     matchLabels:
-      app: unipro-site
+      app: rielu-site
   replicas: 1
   template:
     metadata:
       labels:
-        app: unipro-site
+        app: rielu-site
     spec:
       containers:
         - name: app
-          image: registry.uniproject.jp/official/unipro-site:4.1.8
+          image: registry.rielu.uniproject.jp/official/rielu-site:4.1.8
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000

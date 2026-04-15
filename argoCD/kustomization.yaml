@@ -11,4 +11,4 @@ resources:
 labels:
   - includeSelectors: true
     pairs:
-      app: unipro-site
+      app: rielu-site
