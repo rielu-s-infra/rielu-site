@@ -1,5 +1,5 @@
 apiVersion: argocd-image-updater.argoproj.io/v1alpha1
-kind: ImageUpdater
+kind: Application
 metadata:
   name: rielu-site
   namespace: argocd
