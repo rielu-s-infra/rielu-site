@@ -1,14 +1,9 @@
-apiVersion: argocd-image-updater.argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: rielu-site
   namespace: argocd
-spec:
-  namespace: argocd
-  applicationRefs:
-    - namePattern: "rielu-site"
-      images:
-        - alias: "rielu-site"
-          imageName: "docker.io/rieluinfra/rielu-site"
-          commonUpdateSettings:
-            updateStrategy: "semver"
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: rielu-site=docker.io/rieluinfra/rielu-site
+    argocd-image-updater.argoproj.io/rielu-site.update-strategy: semver
+    argocd-image-updater.argoproj.io/write-back-method: git
