@@ -47,7 +47,10 @@ export function getLatestPosts(limit = 3): PostMeta[] {
       const raw = fs.readFileSync(filePath, "utf8");
       const parsed = matter(raw);
       const title = parsed.data?.title ?? "無題";
-      const description = normalizeDescription(parsed.data?.description, parsed.content);
+      const description = normalizeDescription(
+        parsed.data?.description,
+        parsed.content,
+      );
       const date = normalizeDate(parsed.data?.date);
 
       return {

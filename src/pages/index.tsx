@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { getLatestPosts, PostMeta } from "../lib/posts";
+import { getLatestPosts, type PostMeta } from "../lib/posts";
 
 type Props = {
   posts: PostMeta[];
@@ -298,7 +298,9 @@ export default function Home({ posts }: Props) {
                 <br />
                 インフラエンジニアリングとコンテナ技術に熱中している開発者です。
                 <br />
-                自宅ラボでのサーバー構築を趣味としており、Proxmox や Kubernetes を用いたインフラの自動化や、IPv6 メインのネットワーク環境構築に取り組んでいます。
+                自宅ラボでのサーバー構築を趣味としており、Proxmox や Kubernetes
+                を用いたインフラの自動化や、IPv6
+                メインのネットワーク環境構築に取り組んでいます。
                 <br />
                 「複雑なものをシンプルに、不便なものを自動化で快適に」をモットーに、日々手を動かして新しい技術を検証しています。
                 <br />
@@ -346,8 +348,15 @@ export default function Home({ posts }: Props) {
             <i className="fa-brands fa-github"></i> GitHub
           </h2>
           <div className="github-card">
-            <p>各プロジェクトのソースコードや、マニフェストファイルを公開しています。</p>
-            <a href="https://github.com/penti-nameko" className="btn-github" target="_blank" rel="noreferrer">
+            <p>
+              各プロジェクトのソースコードや、マニフェストファイルを公開しています。
+            </p>
+            <a
+              href="https://github.com/penti-nameko"
+              className="btn-github"
+              target="_blank"
+              rel="noreferrer"
+            >
               View GitHub
             </a>
           </div>
