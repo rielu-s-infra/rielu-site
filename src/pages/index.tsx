@@ -284,7 +284,7 @@ export default function Home({ posts }: Props) {
           </div>
         </div>
       </header>
-      <main className="container">
+      <master className="container">
         <section id="about" className="section">
           <h2>
             <i className="fa-solid fa-user"></i> About Me
@@ -361,7 +361,7 @@ export default function Home({ posts }: Props) {
             </a>
           </div>
         </section>
-      </main>
+      </master>
       <footer>
         <p>&copy; 2026 rielu. all rights reserved.</p>
       </footer>
